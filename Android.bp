@@ -1,0 +1,1211 @@
+//
+// Automatically generated file. DO NOT MODIFY
+//
+
+soong_namespace {
+    imports: [
+        "device/samsung/s5e9925-common",
+        "hardware/samsung",
+        "hardware/samsung_slsi-linaro/exynos",
+        "hardware/samsung_slsi-linaro/graphics",
+        "vendor/samsung/s5e9925-common",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.bluetooth@1.0-impl-qti",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "vendor.samsung.hardware.bluetooth@2.0",
+                "android.hardware.bluetooth@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtriplecam_image_optical_zoom",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtriplecam_image_optical_zoom.so",
+            ],
+            shared_libs: [
+                "libmpbase",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtriplecam_video_optical_zoom",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtriplecam_video_optical_zoom.so",
+            ],
+            shared_libs: [
+                "libmpbase",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtriplecapture_interface",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtriplecapture_interface.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libuniplugin",
+                "libtriplecam_image_optical_zoom",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtriplepreview_interface",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtriplepreview_interface.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libuniplugin",
+                "libtriplecam_video_optical_zoom",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.bluetooth@2.0",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so",
+            ],
+            shared_libs: [
+                "android.hardware.bluetooth@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.bluetooth@1.0-service-qti",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libhidlbase",
+                "vendor.samsung.hardware.bluetooth@2.0",
+                "android.hardware.bluetooth@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.gnss@2.1-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.gnss@2.1-impl.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "liblog",
+                "libbase",
+                "libcutils",
+                "libutils",
+                "libhidlbase",
+                "libvndksupport",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss@1.1",
+                "android.hardware.gnss@2.0",
+                "android.hardware.gnss@2.1",
+                "android.hardware.gnss.measurement_corrections@1.0",
+                "android.hardware.gnss.measurement_corrections@1.1",
+                "android.hardware.gnss.visibility_control@1.0",
+                "libm",
+                "libdl",
+                "libz",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "camera.s5e9925",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/camera.s5e9925.so",
+            ],
+            shared_libs: [
+                "libui_shim",
+                "liblog",
+                "libhardware",
+                "libutils",
+                "libion_exynos",
+                "libhwjpeg",
+                "libnativewindow",
+                "libexynoscamera3",
+                "libbase",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.gnss@2.1-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.samsung.hardware.gnss@2.1-impl.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "liblog",
+                "libbase",
+                "libcutils",
+                "libutils",
+                "libhidlbase",
+                "libvndksupport",
+                "vendor.samsung.hardware.gnss@2.0",
+                "vendor.samsung.hardware.gnss@2.1",
+                "libm",
+                "libdl",
+                "libz",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libMERTA",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libMERTA.so",
+            ],
+            shared_libs: [
+                "libc",
+                "libc++",
+                "libion_exynos",
+                "liblog",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbauthserver",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbauthserver.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libbauthtzcommon",
+                "libsynaFpSensorTestNwd",
+                "libegis_fp_normal_sensor_test",
+                "libgf_in_system_lib",
+                "libqfp_sensortest",
+                "libcrypto",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbauthtzcommon",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbauthtzcommon.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libteecl",
+                "libc",
+                "libm",
+                "libdl",
+                "libc++",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libegis_fp_normal_sensor_test",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libegis_fp_normal_sensor_test.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libeis_core",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libeis_core.so",
+            ],
+            shared_libs: [
+                "libutils-v32",
+                "libsensorndkbridge",
+                "libexynosv4l2",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbase",
+                "libacryl",
+                "libexynosutils",
+                "libion_exynos",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libeis_interface",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libeis_interface.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libui",
+                "liblog",
+                "libcutils",
+                "libuniplugin",
+                "libeis_core",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqfp_sensortest",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqfp_sensortest.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsemseg",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsemseg.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libenn_public_api_cpp_lib",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libvdis_core",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libvdis_core.so",
+            ],
+            shared_libs: [
+                "libutils-v32",
+                "libshim_sensorndkbridge",
+                "libutils",
+                "libui",
+                "liblog",
+                "libcutils",
+                "libsensorndkbridge",
+                "libdmabufheap",
+                "libexynosutils",
+                "libexynosv4l2",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libvdis_interface",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libvdis_interface.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libui",
+                "liblog",
+                "libcutils",
+                "libuniplugin",
+                "libvdis_core",
+                "libIMUSensor",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libvpl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libvpl.so",
+            ],
+            shared_libs: [
+                "libenn_public_api_cpp_lib",
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libz",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "sensors.sensorhub",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/sensors.sensorhub.so",
+            ],
+            shared_libs: [
+                "libutils-v32",
+                "android.hardware.sensors@1.0",
+                "android.hardware.sensors@2.0",
+                "android.hardware.sensors@2.0-ScopedWakelock",
+                "android.hardware.sensors@2.1",
+                "android.hardware.contexthub@1.0",
+                "libcutils",
+                "liblog",
+                "libbase",
+                "libhidlbase",
+                "libutils",
+                "libhardware",
+                "libhardware_legacy",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudiosaplus_sec",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libaudiosaplus_sec.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libaudioutils",
+                "lib_SoundAlive_play_plus_ver800",
+                "lib_SoundAlive_AlbumArt_ver105",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsamsungSoundbooster_plus",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libsamsungSoundbooster_plus.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "lib_SoundBooster_ver1100",
+                "libsecaudioinfo",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libswdap",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libswdap.so",
+            ],
+            shared_libs: [
+                "libaudioutils",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libprofileparamstorage",
+                "libspatializerparamstorage",
+                "libsecaudiocoreutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libswspatializer",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libswspatializer.so",
+            ],
+            shared_libs: [
+                "libaudioutils",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libprofileparamstorage",
+                "libspatializerparamstorage",
+                "spatializer-aidl-cpp",
+                "libsecaudiocoreutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "gpsd",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/gpsd",
+            ],
+            shared_libs: [
+                "libc++",
+                "liblog",
+                "libm",
+                "libandroid_net",
+                "libssl",
+                "libcrypto",
+                "libz",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib_SoundBooster_ver1100",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/lib_SoundBooster_ver1100.so",
+            ],
+            shared_libs: [
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera3",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera3.so",
+            ],
+            shared_libs: [
+                "libui_shim",
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libui",
+                "libcamera_metadata",
+                "libutilscallstack",
+                "libexynosutils",
+                "libhwjpeg",
+                "libexynosv4l2",
+                "libion_exynos",
+                "libsync",
+                "libcsc",
+                "libexynosgraphicbuffer",
+                "libbase",
+                "libhwjsqz",
+                "libsecnativefeature",
+                "libuniplugin",
+                "libsensorlistener",
+                "libuniapi",
+                "vendor.samsung.hardware.thermal@1.0",
+                "libhidlbase",
+                "libsecril-client",
+                "libepicoperator",
+                "libhypervintf",
+                "libfloatingfeature",
+                "libexynoscamera_plugin",
+                "libexynosgdc",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_cnr_plugin",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_cnr_plugin.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libexynoscamera_plugin",
+                "libexynosutils",
+                "libswcnr",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_fakefusion",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_fakefusion.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libexynosutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_fakefusion_plugin",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_fakefusion_plugin.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libexynoscamera_plugin",
+                "libexynosutils",
+                "libexynoscamera_fakefusion",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_merta_plugin",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_merta_plugin.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libexynoscamera_plugin",
+                "libexynosutils",
+                "libMERTA",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_plugin",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_plugin.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_plugin_utils",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_plugin_utils.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libion",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_ssl_plugin",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_ssl_plugin.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libexynoscamera_plugin",
+                "libexynosutils",
+                "libsemseg",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexynoscamera_vpl_plugin",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libexynoscamera_vpl_plugin.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libexynoscamera_plugin",
+                "libexynosutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsn220u_fw",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsn220u_fw.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libswcnr",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libswcnr.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "sensors.grip",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/sensors.grip.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libfmq",
+                "libhidlbase",
+                "libhardware",
+                "android.hardware.sensors@2.0",
+                "android.hardware.sensors@2.0-ScopedWakelock",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}

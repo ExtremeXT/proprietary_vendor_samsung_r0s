@@ -1,0 +1,105 @@
+on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules wlan.ko
+
+on post-fs-data
+    # for fwpath
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+    chmod 0644 /sys/module/wlan/parameters/fwpath
+
+    # for boot_wlan
+    chown wifi wifi /sys/kernel/boot_wlan/boot_wlan
+    chmod 0640 /sys/kernel/boot_wlan/boot_wlan
+
+    # for WIFI qcwlanstate
+    chown wifi wifi /sys/wifi/qcwlanstate
+    chmod 0644 /sys/wifi/qcwlanstate
+
+    # for WIFI con_mode
+    chown wifi wifi /sys/module/wlan/parameters/con_mode
+    chmod 0644 /sys/module/wlan/parameters/con_mode
+	
+    chown wifi wifi /sys/wifi/wifiver
+    chmod 0640 /sys/wifi/wifiver
+    chown wifi wifi /sys/wifi/softap
+    chmod 0640 /sys/wifi/softap
+    chown wifi wifi /sys/wifi/memdump
+    chmod 0644 /sys/wifi/memdump
+
+    # for WIFI Antenna
+    write /data/vendor/conn/.wificable.info E
+    chown system root /data/vendor/conn/.wificable.info
+    chmod 0666 /data/vendor/conn/.wificable.info
+    chown wifi root /sys/wifi/wificable
+    chmod 0664 /sys/wifi/wificable
+	
+    # for WIFI TRP/TIS
+    chown wifi wifi /data/vendor/conn/.psm.info
+    chmod 0644 /data/vendor/conn/.psm.info
+    chown wifi wifi /sys/wifi/pm
+    chmod 0640 /sys/wifi/pm
+
+    # for WIFI Antenna Selection
+    chown wifi wifi /data/vendor/conn/.ant.info
+    chmod 0644 /data/vendor/conn/.ant.info
+    chown wifi wifi /sys/wifi/ant
+    chmod 0640 /sys/wifi/ant
+
+    # Create wifihal services directories for QC-RTT
+    mkdir /dev/socket/wifihal 0770 wifi wifi
+    chmod 2770 /dev/socket/wifihal
+
+    #Create directories for Location services for QC-RTT
+    mkdir /data/vendor/location 0770 wifi wifi
+    chmod 2770 /data/vendor/location
+    mkdir /data/vendor/location/mq 0770 wifi wifi
+    chmod 2770 /data/vendor/location/mq
+    mkdir /dev/socket/location 0770 wifi wifi
+    chmod 2770 /dev/socket/location
+    mkdir /dev/socket/location/mq 0770 wifi wifi
+    chmod 2770 /dev/socket/location/mq
+
+    write /sys/devices/platform/qcom,cnss-qca6490/fs_ready 1
+
+on property:vendor.wlan.ramdump_mode=0
+    write /sys/devices/platform/qcom,cnss-qca6490/recovery 1
+    stop vendor.cnss_dumpcollector
+
+on property:vendor.wlan.ramdump_mode=2
+    write /sys/devices/platform/qcom,cnss-qca6490/recovery 1
+    stop vendor.cnss_dumpcollector
+    start vendor.cnss_dumpcollector
+
+on property:vendor.wlan.ramdump_mode=3
+    write /sys/devices/platform/qcom,cnss-qca6490/recovery 0
+    stop vendor.cnss_dumpcollector
+    start vendor.cnss_dumpcollector
+
+on property:sys.boot_completed=1
+    # Chown enable or disable GRO
+    chown system system /sys/kernel/wifi/dp_aggregation
+    chmod 0664 /sys/kernel/wifi/dp_aggregation
+
+on property:vold.decrypt=trigger_restart_framework
+    start vendor.cnss_diag
+
+service vendor.cnss_diag /system/vendor/bin/cnss_diag -f -b 128 -t HELIUM -F
+    class main
+    user wifi
+    group system wifi inet sdcard_rw media_rw
+    oneshot
+
+service vendor.cnss_dumpcollector /system/vendor/bin/cnss_dumpcollector
+    class main
+    user wifi
+    group system wifi inet sdcard_rw media_rw
+    oneshot
+
+# Start loc_launcher to launch lowi-server
+service vendor.loc_launcher /system/vendor/bin/loc_launcher
+    class late_start
+    user wifi
+    group wifi
+
+on charger
+    write /sys/kernel/cnss/charger_mode 1
+
